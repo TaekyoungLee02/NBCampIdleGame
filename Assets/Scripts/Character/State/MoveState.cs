@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.Apple;
 
-public class IdleState : BaseState
+public class MoveState : BaseState
 {
-    public IdleState(TopDownController controller) : base(controller)
+    public MoveState(TopDownController controller) : base(controller)
     {
-        state = State.Idle;
+        state = State.Move;
     }
 
     public override void OnStateEnter()
@@ -20,6 +20,6 @@ public class IdleState : BaseState
 
     public override void OnStateUpdate()
     {
-        controller.SetDestination(controller.transform.forward);
+        if (controller is PlayerController) (controller as PlayerController).ChaseEnemy();
     }
 }

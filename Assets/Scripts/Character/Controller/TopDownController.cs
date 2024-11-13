@@ -1,23 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TopDownController : MonoBehaviour
+public abstract class TopDownController : MonoBehaviour
 {
-    private FSM fsm;
+    protected FSM fsm;
 
-    // Start is called before the first frame update
-    void Start()
+    public event Action<Vector3> OnMove;
+    public event Action OnAttack;
+
+
+    public virtual void SetDestination(Vector3 destination)
     {
-        
+        OnMove?.Invoke(destination);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    
+    public abstract void StartAttack();
+    public abstract void StopAttack();
 }

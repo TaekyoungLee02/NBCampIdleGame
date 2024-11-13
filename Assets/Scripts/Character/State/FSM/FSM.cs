@@ -6,9 +6,13 @@ public class FSM
 {
     private BaseState curState;
 
+    public BaseState CurState { get { return curState; } }
+
     public FSM(BaseState initState)
     {
         curState = initState;
+
+        ChangeState(curState);
     }
 
     public void ChangeState(BaseState nextState)

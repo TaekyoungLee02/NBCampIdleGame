@@ -1,25 +1,26 @@
 using UnityEngine;
 using UnityEngine.Apple;
 
-public class IdleState : BaseState
+public class AttackState : BaseState
 {
-    public IdleState(TopDownController controller) : base(controller)
+    public AttackState(TopDownController controller) : base(controller)
     {
-        state = State.Idle;
+        state = State.Attack;
     }
 
     public override void OnStateEnter()
     {
-        
+        controller.StartAttack();
     }
 
     public override void OnStateExit()
     {
-        
+        controller.StopAttack();
+
     }
 
     public override void OnStateUpdate()
     {
-        controller.SetDestination(controller.transform.forward);
+
     }
 }
