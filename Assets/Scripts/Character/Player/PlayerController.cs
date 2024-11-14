@@ -132,7 +132,7 @@ public class PlayerController : TopDownController
         {
             stat.ChangeHealth(-stat.attack);
 
-            Debug.Log(curState);
+            
 
 
             // 일단 하드 코딩..

@@ -5,4 +5,8 @@ using UnityEngine;
 public class EnemyStat : CharacterStat
 {
 
+    public override void Death()
+    {
+        Destroy(gameObject);
+    }
 }

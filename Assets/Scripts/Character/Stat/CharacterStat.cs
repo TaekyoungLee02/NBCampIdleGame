@@ -22,6 +22,8 @@ public abstract class CharacterStat : MonoBehaviour
 
         Mathf.Clamp(curHP, 0, maxHP);
 
-        if(curHP == 0) Destroy(gameObject);
+        if (curHP == 0) Death();
     }
+
+    public abstract void Death();
 }
